@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>METAUX78K</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .circle-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .circle {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 5px solid #ffffffaa;
+      animation: pulse 2.5s infinite ease-in-out;
+      box-sizing: border-box;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.3; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.3; }
+    }
+
+    .text {
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0.4;
+    }
+
+    .click-area {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-container">
+    <div class="circle"></div>
+    <div class="click-area" onclick="iniciarMeta()"></div>
+  </div>
+  <div class="text">Toque o símbolo</div>
+  <audio id="audio" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Thunder.ogg" preload="auto"></audio>
+
+  <script>
+    function iniciarMeta() {
+      document.getElementById("audio").play();
+      setTimeout(() => {
+        window.location.href = "MetaLux_UI_FINAL_V17_TOTAL_OK.html";
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
